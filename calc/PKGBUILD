@@ -1,0 +1,18 @@
+# Maintainer: nekef nekef.chk@gmail.com
+pkgname=calc
+pkgver=1.0
+pkgrel=1
+pkgdesc="A simple calculator program"
+arch=('x86_64')
+url=N/A
+license=('GPL')
+source=('main.c')
+sha256sums=('8ea09587761604dde1f6f470c0e28b1488be0280c9b51da402eea7be3a40edb9')
+
+build() {
+    gcc -o calculator main.c
+}
+
+package() {
+    install -Dm755 calculator "${pkgdir}/usr/bin/calculator"
+}
